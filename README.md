@@ -65,8 +65,28 @@ In order to see the combined suitability result, we need to define the visualiza
 Insert Code Here
 
 ### Exporting Image to Google Drive
-This part is not neccesary to include in your code, but will be used to compare the results from GEE to the results we will create using ArcGIS Pro. In this code, we need to fist define a region of the image that will be exported. This region will then be used when the export is generated. When you run the code with this section included, you will notice that a button will be added to the tasks tab. This will allow you to export the image to your Google Drive. It should take about a minute to export and you will be able to compare these results to the results we will create in ArcGIS Pro. 
+This part is not neccesary to include in your code, but will be used to compare the results from GEE to the results we will create using ArcGIS Pro. In this code, we need to define a region of the image that will be exported. This region will then be used when the export is generated. When you run the code with this section included, you will notice that a button will be added to the tasks tab. This will allow you to export the image to your Google Drive. It should take about a minute to export and you will be able to compare these results to the results we will create in ArcGIS Pro. 
 
 Insert Code Here
 
 ## Coding in ArcGIS Pro
+ArcGIS Pro is a GIS software platform that is installed on your local computer. A named user is required to utilze the software and it is not free. However, for those familiar with GIS, this is one of the most popular GIS software platform in the world. ArcGIS Pro utilizes the python programing language to do analysis and in this portion of the tutorial, I will show how we can conduct the same analysis in this programing language. This python scipt was generated using Model Builder and modified to allow anyone with access to ArcGIS pro to run the same analysis on their personal computer. For this tutorial, we will not go into detail about the script itself, but rather compare the GEE and ArcGIS Pro results. All the data has been downloaded from the same sources and clipped to an area around Lancaster, Pennsylvania. 
+
+### Before we Begin...
+Before we begin, download the "CornSuitabilityExercise.zip" file from the data folder in this repo and extract it to a file location on your computer. Also, download the "Corn_Suitability_Model.py" from this repo and open it the text editor of your choosing. 
+
+### Updating the Folder Locations
+With the python code open in your text editor, update the locations of the Results_Folder and Data_Folder that you extracted in the previous step. Ensure that you include two slashes and that it looks like the code below. 
+
+Insert Code Here
+
+Feel free to take a look at the code and try to get a grasp of what is going on in it. Notice that for this analysis we are using the reclassify tool in ArcGIS to create our suitability images. Also, rather than calculating the annual precipitation, we are using the annual precipitation layer that came in the PRISM download. Besides using reclassify, the analysis is essentially the same. 
+
+### Copy the Code into the Python Window in ArcGIS Pro and Run it
+After you opening a project in ArcGIS Pro, in the Analysis tab, click the python drop-down and select "Python Window". The Python Window will appear at the bottom of the project. Copy the python code with your updated folder locations and paste it into the Python Window. Press "Enter" and the code will run. If no errors occur it worked!
+
+### Viewing the Results
+In the map tab, click add data and navigate to the "results_folder". Notice that all the individual suitability images and the "combined_op_suit" image are now in the folder. Add the combined_op_suit image and explore the results. 
+
+## Compare the GEE and Python Results
+When you add the image we created in GEE and downloaded from Google Drive, we can now easily compare the two images. To do so, click on one of the layers in the contents pane, clipc the appearance tab, and click swipe. You will notice that the mouse icon has changed and when you click on the map, you can compare the images that are currently on top of one another. At first glance, the images seem very similar, however as you zoom in, you can see that the pixels don't line up perfectly. This is probably due to the different  coordinate systems of the images. I intend to tweak the code to create more consistant results, but for this analysis, I would say that the results are pretty consistent and good enough for this application. I hope that you enjoyed this tutorial and feel free modify the code for other crop species or geographies. Happy Coding!
