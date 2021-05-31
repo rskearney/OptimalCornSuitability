@@ -28,8 +28,8 @@ def CornSuitability():  # Optimal Corn Suitability Model
     arcpy.CheckOutExtension("ImageAnalyst")
     arcpy.CheckOutExtension("3D")
 
-    results_folder = "C:\\Users\\Rkear\\OneDrive\\Documents\\PythonForGIS\\final\\Results"
-    data_folder = "C:\\Users\\Rkear\\OneDrive\\Documents\\PythonForGIS\\final\\testdata"
+    results_folder = "C:\\Users\\Rkear\\OneDrive\\Documents\\PythonForGIS\\final\\Results_Folder"
+    data_folder = "C:\\Users\\Rkear\\OneDrive\\Documents\\PythonForGIS\\final\\Data_Folder"
 
     # Model Environment settings
     with arcpy.EnvManager(cellSize="MINOF", scratchWorkspace= results_folder, workspace= results_folder):
